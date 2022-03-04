@@ -1,0 +1,30 @@
+debug: False
+
+train_feeder_args:
+  data_path: ./data/ntu/xview/train_data_joint.npy
+  gender_label_path: ./data/ntu/xview/train_label_reid.pkl
+  action_label_path: ./data/ntu/xview/train_label.pkl
+  debug: False
+  random_choose: False
+  random_shift: False
+  random_move: False
+  window_size: -1
+  normalization: False
+
+test_feeder_args:
+  debug: False
+  data_path: ./data/ntu/xview/val_data_joint.npy
+  gender_label_path: ./data/ntu/xview/val_label_reid.pkl
+  action_label_path: ./data/ntu/xview/val_label.pkl
+
+# optim
+weight_decay: 0.000001 # L2 norm
+base_lr: 0.01
+step: [30]
+
+# training
+num_epoch: 100
+device: [0]
+batch_size: 2000
+
+test_batch_size: 200

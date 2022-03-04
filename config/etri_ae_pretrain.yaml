@@ -1,0 +1,30 @@
+debug: False
+
+train_feeder_args:
+  data_path: ./data/etri/data_train.npy
+  gender_label_path: ./data/etri/genders_train.pkl
+  action_label_path: ./data/etri/actions_train.pkl
+  debug: False
+  random_choose: False
+  random_shift: False
+  random_move: False
+  window_size: -1
+  normalization: False
+
+test_feeder_args:
+  debug: False
+  data_path: ./data/etri/data_test.npy
+  gender_label_path: ./data/etri/genders_test.pkl
+  action_label_path: ./data/etri/actions_test.pkl
+
+# optim
+weight_decay: 0.0001 # L2 norm
+base_lr: 0.00001
+step: [20, 40]
+
+# training
+num_epoch: 100
+device: [0,1,2]
+batch_size: 2000
+
+test_batch_size: 200
